@@ -17,3 +17,12 @@ Route::get('/guest-login', [AuthController::class, 'guestLogin'])->name('guest.l
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::post('/dashboard/simulation/start', [DashboardController::class, 'startSimulation'])
+    ->name('dashboard.simulation.start');
+
+Route::post('/dashboard/simulation/generate', [DashboardController::class, 'generateSimulationReading'])
+    ->name('dashboard.simulation.generate');
+
+Route::post('/dashboard/simulation/stop', [DashboardController::class, 'stopSimulation'])
+    ->name('dashboard.simulation.stop');
